@@ -24,7 +24,11 @@ namespace AdoNetLib
               selectcommandtext,
               connector.GetConnection()
             );
-            return dt;
+            var ds = new DataSet();
+            adapter.Fill(ds);
+
+            //return dt;
+            return ds.Tables[0];
         }
     }
 }
